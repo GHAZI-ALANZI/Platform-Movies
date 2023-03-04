@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using Platform_Movies.Models.Domain;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<DatabaseContext>(opcoes =>
+{
+    opcoes.UseSqlServer(builder.Configuration.GetConnectionString("Mycon"));
+});
 
 var app = builder.Build();
 
