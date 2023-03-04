@@ -7,4 +7,11 @@
     <RootNamespace>Platform_Movies</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Domain\" />
+    <Folder Include="Models\DTO\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="wwwroot\Uploads\" />
+  </ItemGroup>
+
 </Project>
