@@ -1,32 +1,32 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Platform_Movies.Models;
+using Platform_Movies.Repositories.Abstract;
 
 namespace Platform_Movies.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IMovieService _movieService;
+        public HomeController(IMovieService movieService)
         {
-            _logger = logger;
+            _movieService = movieService;
+        }
+        public IActionResult Index(string term = "", int currentPage = 1)
+        {
+            var movies = _movieService.List(term, true, currentPage);
+            return View(movies);
         }
 
-        public IActionResult Index()
+        public IActionResult About()
         {
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult MovieDetail(int movieId)
         {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var movie = _movieService.GetById(movieId);
+            return View(movie);
         }
     }
 }
