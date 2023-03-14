@@ -1,7 +1,16 @@
 using Microsoft.EntityFrameworkCore;
 using Platform_Movies.Models.Domain;
+using Platform_Movies.Repositories.Abstract;
+using Platform_Movies.Repositories.Implementation;
 
 var builder = WebApplication.CreateBuilder(args);
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
+builder.Services.AddScoped<IGenreService, GenreService>();
+builder.Services.AddScoped<IFileService, FileService>();
+builder.Services.AddScoped<IMovieService, MovieService>();
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
