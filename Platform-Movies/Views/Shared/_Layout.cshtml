@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja de Filmes</title>
+    <title>Platform Movie</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/forms.css">
@@ -19,11 +19,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="nav-bar bg-primary shadow p-3">
-        <div class="logo" style="font-family:'Script MT';font-size:3rem">
+    <nav class="nav-bar bg-primary shadow p-3 navbar navbar-dark bg-primary">
+        <div class="logo" style="font-family:'Script MT';font-size:2rem">
             Movie Platform
         </div>
-        <ul class="nav-link ">
+        <ul class="nav-link navbar navbar-dark bg-primary ">
             <li><a class="active" href="/Home/Index">Home</a></li>
             <li><a href="/Home/About">About</a></li>
             @if (!string.IsNullOrEmpty(username))
@@ -32,7 +32,7 @@
                 <li>
                     <a href="#">Admin <i class="fa fa-caret-down"></i></a>
 
-                    <ul class="dropdown-nav-link">
+                    <ul class="dropdown-nav-link bg-primary">
                         <li><a href="/Genre/Add">Genre</a></li>
                         <li><a href="/Movie/Add">Movie</a></li>
                         <li><a href="/UserAuthentication/Logout">Logout</a></li>
@@ -49,7 +49,7 @@
     <div class="container">
         @RenderBody()
     </div>
-    <footer class="bg-primary fs-1 fw-bold text-center">
+    <footer class="bg-primary text-center text-white">
         &#169; 2023 Ghazi
     </footer>
     <link rel="stylesheet" href="/lib/bootstrap/dist/js/bootstrap.min.js">

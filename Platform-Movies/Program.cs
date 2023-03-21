@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Platform_Movies.Models.Domain;
 using Platform_Movies.Repositories.Abstract;
@@ -14,10 +15,14 @@ builder.Services.AddScoped<IMovieService, MovieService>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<DatabaseContext>(opcoes =>
+builder.Services.AddDbContext<DatabaseDbContext>(op =>
 {
-    opcoes.UseSqlServer(builder.Configuration.GetConnectionString("Mycon"));
+    op.UseSqlServer(builder.Configuration.GetConnectionString("Mycon"));
 });
+// Identity
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<DatabaseDbContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 

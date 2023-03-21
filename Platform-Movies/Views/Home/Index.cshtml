@@ -1,4 +1,4 @@
-﻿@model ASP.NET.Core._6.Loja.Filmes.Mvc.Models.DTO.MovieListVm
+﻿@model Platform_Movies.Models.DTO.MovieListVm
 @{
     Layout = "_Layout";
 }
@@ -14,14 +14,14 @@
     {
         <div class="movie-card " onclick="window.location.href='/Home/MovieDetail?movieId=@movie.Id'">
             <div class="movie-image">
-                <img src="/Uploads/@movie.MovieImage">
+                <img src="~/Uploads/@movie.MovieImage">
             </div>
             <div class="movie-info ">
-                <h3 >@movie.Title</h3>
-                <h4 >@movie.GenreNames</h4>
-                <h4>@movie.ReleaseYear</h4>
-                <h4>Cast : @movie.Cast</h4>
-                <h4>Director : @movie.Director</h4>
+                <h3 class="text-primary">@movie.Title</h3>
+                <h5 >@movie.GenreNames</h5>
+                <h5>@movie.ReleaseYear</h5>
+                <h5>Cast : @movie.Cast</h5>
+                <h5>Director : @movie.Director</h5>
             </div>
         </div>
     }

@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Platform_Movies.Models.Domain
 {
-    public class DatabaseContext : IdentityDbContext<ApplicationUser>
+    public class DatabaseDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
+        public DatabaseDbContext(DbContextOptions<DatabaseDbContext> options) : base(options)
         {
         }
 

@@ -5,8 +5,8 @@ namespace Platform_Movies.Repositories.Implementation
 {
     public class GenreService : IGenreService
     {
-        private readonly DatabaseContext ctx;
-        public GenreService(DatabaseContext ctx)
+        private readonly DatabaseDbContext ctx;
+        public GenreService(DatabaseDbContext ctx)
         {
             this.ctx = ctx;
         }

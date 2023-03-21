@@ -6,8 +6,8 @@ namespace Platform_Movies.Repositories.Implementation
 {
     public class MovieService : IMovieService
     {
-        private readonly DatabaseContext ctx;
-        public MovieService(DatabaseContext ctx)
+        private readonly DatabaseDbContext ctx;
+        public MovieService(DatabaseDbContext ctx)
         {
             this.ctx = ctx;
         }
